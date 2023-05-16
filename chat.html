@@ -34,17 +34,17 @@
 		embedded_svc.settings.entryFeature = 'LiveAgent';
 
 		embedded_svc.init(
-			'https://saks--devmadhu.sandbox.my.salesforce.com',
-			'https://saks--devmadhu.sandbox.my.site.com/SupportSaks',
+			'https://saks--staging.sandbox.my.salesforce.com',
+			'https://saks--staging.sandbox.my.site.com/SupportSaks',
 			gslbBaseURL,
-			'00D4C0000004a04',
-			'Chat_with_no_form',
+			'00D780000000MzB',
+			'Saks_English_Chat_Staging',
 			{
-				baseLiveAgentContentURL: 'https://c.la2-c1cs-ia5.salesforceliveagent.com/content',
-				deploymentId: '5725e0000009QDC',
+				baseLiveAgentContentURL: 'https://c.la5-c1cs-ia4.salesforceliveagent.com/content',
+				deploymentId: '5725e0000009QDB',
 				buttonId: '5735e000000UmuR',
-				baseLiveAgentURL: 'https://d.la2-c1cs-ia5.salesforceliveagent.com/chat',
-				eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I4C000000CapEUAS_186a35807ca',
+				baseLiveAgentURL: 'https://d.la5-c1cs-ia4.salesforceliveagent.com/chat',
+				eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I5e000000LsgWEAS_17ba1fa6bb6',
 				isOfflineSupportEnabled: false
 			}
 		);
@@ -52,7 +52,7 @@
 
 	if (!window.embedded_svc) {
 		var s = document.createElement('script');
-		s.setAttribute('src', 'https://saks--devmadhu.sandbox.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+		s.setAttribute('src', 'https://saks--staging.sandbox.my.salesforce.com/embeddedservice/5.0/esw.min.js');
 		s.onload = function() {
 			initESW(null);
 		};
