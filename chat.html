@@ -33,19 +33,20 @@
 		embedded_svc.settings.enabledFeatures = ['LiveAgent'];
 		embedded_svc.settings.entryFeature = 'LiveAgent';
 		
-		embedded_svc.snippetSettingsFile.extraPrechatFormDetails = [{"label":"Customer Email", 
-                                                                            "transcriptFields": ["Customer_Email__c"],
-                                                                           }];
-
-               document.addEventListener(
-	"setCustomField",
+		window._snapinsSnippetSettingsFile = (function (){
+	console.log("Snippet Settings file loaded.");
+	
+	embedded_svc.snippetSettingsFile.extraPrechatFormDetails = [{"label":"Customer Email", 
+      "transcriptFields": ["Customer_Email__c"]
+      }];
+	 document.addEventListener(
+	 "setCustomField",
 	function(event) {
-		embedded_svc.settings.extraPrechatFormDetails[0].value = 'test@test.com';
-		// Fire startChat callback.
-		event.detail.callback();
+		embedded_svc.settings.extraPrechatFormDetails[0].value = event.detail.customField;
 	},
 	false
-);
+	 );
+})();
 
 		embedded_svc.init(
 			'https://saks--devmadhu.sandbox.my.salesforce.com',
