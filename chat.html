@@ -40,7 +40,7 @@
                document.addEventListener(
 	"setCustomField",
 	function(event) {
-		embedded_svc.settings.extraPrechatFormDetails[0].value = event.detail.customField;
+		embedded_svc.settings.extraPrechatFormDetails[0].value = 'test@test.com';
 		// Fire startChat callback.
 		event.detail.callback();
 	},
