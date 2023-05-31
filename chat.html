@@ -36,14 +36,15 @@
 		window._snapinsSnippetSettingsFile = (function (){
 	console.log("Snippet Settings file loaded.");
 	
-	embedded_svc.snippetSettingsFile.extraPrechatFormDetails = [{"label":"Customer Email", 
+	/*embedded_svc.snippetSettingsFile.extraPrechatFormDetails = [{"label":"Customer Email", 
       "transcriptFields": ["Customer_Email__c"],
       "value": "test@test.com"
-      }];
+      }];*/
 	 document.addEventListener(
 	 "setCustomField",
 	function(event) {
-		embedded_svc.settings.extraPrechatFormDetails[0].value = event.detail.customField;
+		console.log('event.detail'+JSON.stringify(event.detail));
+		//embedded_svc.settings.extraPrechatFormDetails[0].value = event.detail.customField;
 	},
 	false
 	 );
