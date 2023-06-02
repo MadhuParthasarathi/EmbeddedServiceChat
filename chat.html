@@ -50,16 +50,15 @@
 	 );
 })();*/
 		
-		document.addEventListener(
+document.addEventListener(
 	"setCustomField",
 	function(event) {
-		embedded_svc.settings.extraPrechatFormDetails[0].value = event.detail.customField;
-		// Fire startChat callback.
-		event.detail.callback();
+		console.log('Event handled'+event.detail.customFieldValue);
+		embedded_svc.settings.extraPrechatFormDetails[0].value = event.detail.customFieldValue;
 	},
 	false
 );
-			//})();
+		//})();
 
 		embedded_svc.init(
 			'https://saks--devmadhu.sandbox.my.salesforce.com',
