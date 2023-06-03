@@ -40,7 +40,7 @@
       "transcriptFields": ["Customer_Email__c"],
       "value": "test@test.com"
       }];
-	/* document.addEventListener(
+	document.addEventListener(
 	 "setCustomField",
 	function(event) {
 		console.log('event.detail'+JSON.stringify(event.detail));
@@ -48,16 +48,15 @@
 	},
 	false
 	 );
-})();*/
 		
-document.addEventListener(
+/*document.addEventListener(
 	"setCustomField",
 	function(event) {
 		console.log('Event handled'+event.detail.customFieldValue);
 		embedded_svc.settings.extraPrechatFormDetails[0].value = event.detail.customFieldValue;
 	},
 	false
-);
+);*/
 		//})();
 
 		embedded_svc.init(
