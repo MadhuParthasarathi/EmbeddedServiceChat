@@ -37,9 +37,11 @@
 	console.log("Snippet Settings file loaded.");
 	
 	embedded_svc.snippetSettingsFile.extraPrechatFormDetails = [{"label":"Customer Email", 
-      "transcriptFields": ["Customer_Email__c"]
+      "transcriptFields": ["Customer_Email__c"],
+      “displayToAgent”: true
+								     
       }];
-	document.addEventListener(
+	/*document.addEventListener(
 	 "setCustomField",
 	function(event) {
 		console.log('event.detail'+JSON.stringify(event.detail));
@@ -48,7 +50,7 @@
 	false
 	 );
 		
-/*document.addEventListener(
+document.addEventListener(
 	"setCustomField",
 	function(event) {
 		console.log('Event handled'+event.detail.customFieldValue);
