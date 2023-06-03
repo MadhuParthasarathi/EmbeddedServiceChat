@@ -33,32 +33,11 @@
 		embedded_svc.settings.enabledFeatures = ['LiveAgent'];
 		embedded_svc.settings.entryFeature = 'LiveAgent';
 		
-		//window._snapinsSnippetSettingsFile = (function (){
-	console.log("Snippet Settings file loaded.");
 	
-	embedded_svc.snippetSettingsFile.extraPrechatFormDetails = [{"label":"Customer Email", 
+      embedded_svc.snippetSettingsFile.extraPrechatFormDetails = [{"label":"Customer Email", 
       "transcriptFields": ["Customer_Email__c"],
-      “displayToAgent”: true
-								     
+      “displayToAgent”: true								     
       }];
-	/*document.addEventListener(
-	 "setCustomField",
-	function(event) {
-		console.log('event.detail'+JSON.stringify(event.detail));
-		//embedded_svc.settings.extraPrechatFormDetails[0].value = event.detail.customField;
-	},
-	false
-	 );
-		
-document.addEventListener(
-	"setCustomField",
-	function(event) {
-		console.log('Event handled'+event.detail.customFieldValue);
-		embedded_svc.settings.extraPrechatFormDetails[0].value = event.detail.customFieldValue;
-	},
-	false
-);*/
-		//})();
 
 		embedded_svc.init(
 			'https://saks--devmadhu.sandbox.my.salesforce.com',
