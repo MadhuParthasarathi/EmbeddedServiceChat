@@ -38,14 +38,16 @@
 		
 	        console.log("Snippet Settings file loaded.");
 	
-	        embedded_svc.settings.extraPrechatFormDetails = [{"label":"Customer Email", 
-								  "transcriptFields": ["Customer_Email__c"]
-								 }];
+	        embedded_svc.settings.extraPrechatFormDetails = [{"label":"Customer Email", "transcriptFields": ["Customer_Email__c"]},
+								 {"label":"Customer First Name", "transcriptFields": ["Customer_First_Name__c"]}, 
+								 {"label":"Customer Last Name", "transcriptFields": ["Customer_Last_Name__c"]}];
 	        document.addEventListener(
 	        "setCustomField",
 	        function(event) {
 		console.log('event.detail'+JSON.stringify(event.detail));
 		embedded_svc.settings.extraPrechatFormDetails[0].value = event.detail.customField;
+		embedded_svc.settings.extraPrechatFormDetails[1].value = event.detail.customFieldFirst;
+		embedded_svc.settings.extraPrechatFormDetails[2].value = event.detail.customFieldLast;
 		console.log('event.detail'+JSON.stringify(embedded_svc.settings.extraPrechatFormDetails[0].value));	
 		// Fire startChat callback.
 		event.detail.callback();
