@@ -47,6 +47,7 @@
 	        function(event) {
 		console.log('event.detail'+JSON.stringify(event.detail));
 		embedded_svc.snippetSettingsFile.extraPrechatFormDetails[0].value = event.detail.customField;
+		console.log('event.detail'+JSON.stringify(embedded_svc.snippetSettingsFile.extraPrechatFormDetails[0].value));	
 		// Fire startChat callback.
 		event.detail.callback();
 	        },
