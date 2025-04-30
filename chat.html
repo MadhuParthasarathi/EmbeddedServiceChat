@@ -8,29 +8,33 @@
 		outline: 1px solid #005290;
 	}
 </style>
-	<!--
-<script type='text/javascript' src='https://saks--prajakta.sandbox.my.site.com/ESWNeimanMarcusEmbedded1744710141450/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>	
 
-<script type='text/javascript'>
+<body>
+	<script type='text/javascript'>
 	function initEmbeddedMessaging() {
 		try {
 			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
 
 			embeddedservice_bootstrap.init(
-				'00DD20000008xG5',
+				'00DVZ000002jkOv',
 				'Neiman_Marcus_Embedded_Service_Deployment',
-				'https://saks--prajakta.sandbox.my.site.com/ESWNeimanMarcusEmbedded1744710141450',
+				'https://saks--nmgdev.sandbox.my.site.com/ESWNeimanMarcusEmbedded1745850853061',
 				{
-					scrt2URL: 'https://saks--prajakta.sandbox.my.salesforce-scrt.com'
+					scrt2URL: 'https://saks--nmgdev.sandbox.my.salesforce-scrt.com'
 				}
 			);
 		} catch (err) {
 			console.error('Error loading Embedded Messaging: ', err);
 		}
 	};
-</script>  -->
+</script>
+<script type='text/javascript' src='https://saks--nmgdev.sandbox.my.site.com/ESWNeimanMarcusEmbedded1745850853061/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
 
- <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
+</body>	
+	
+
+
+<!-- <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
 <script type='text/javascript'>
 	var initESW = function(gslbBaseURL) {
 		embedded_svc.settings.displayHelpButton = true; //Or false
@@ -81,6 +85,6 @@
 	} else {
 		initESW('https://service.force.com');
 	}
-</script>
+</script> -->
 
 </html>
