@@ -10,17 +10,46 @@
 </style>
 
 <body>
+<h1>This is a Heading</h1>
 <script type='text/javascript'>
+
+      function convertToEST(date) {
+        return new Date(date.toLocaleString("en-US", { timeZone: "America/New_York" }));
+      }
+
+      function isBusinessHoursEST(date) {
+        const estDate = convertToEST(date);
+        const hours = estDate.getHours(); // 0–23
+
+        return hours >= 9 && hours < 18; // 9 AM to 6 PM (exclusive of 6 PM)
+      }
+
+      const now = new Date();
+      const withinBusinessHours = isBusinessHoursEST(now);
+      
+
+    
 	function initEmbeddedMessaging() {
 		try {
-			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
+        
+        console.log("Is within business hours (EST)?", withinBusinessHours.toString());
+        
+        embeddedservice_bootstrap.settings.chatButtonPosition = "70px,40px";
+			  embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
+
+        window.addEventListener( "onEmbeddedMessagingReady", () => {            
+          console.log( "Inside Prechat API!!" );
+          embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields( { 
+                "isWithinBusinessHours" : withinBusinessHours.toString() 
+          } );
+        } );
 
 			embeddedservice_bootstrap.init(
-				'00DD20000008xG5',
-				'Saks_Neiman_Deployment',
-				'https://saks--prajakta.sandbox.my.site.com/ESWSaksNeimanDeployment1744117792171',
+				'00DVZ000002jkOv',
+				'Neiman_Marcus_Embedded_Service_Deployment',
+				'https://saks--nmgdev.sandbox.my.site.com/ESWNeimanMarcusEmbedded1745850853061',
 				{
-					scrt2URL: 'https://saks--prajakta.sandbox.my.salesforce-scrt.com'
+					scrt2URL: 'https://saks--nmgdev.sandbox.my.salesforce-scrt.com'
 				}
 			);
 		} catch (err) {
@@ -28,8 +57,9 @@
 		}
 	};
 </script>
-<script type='text/javascript' src='https://saks--prajakta.sandbox.my.site.com/ESWSaksNeimanDeployment1744117792171/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'>
-</script>
+<script type='text/javascript' src='https://saks--nmgdev.sandbox.my.site.com/ESWNeimanMarcusEmbedded1745850853061/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
+
+
 </body>	
 	
 
